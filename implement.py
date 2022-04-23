@@ -1,18 +1,25 @@
 from main import Node
-from main import Linkedlist
+from main import LinkedList
 
-list1 = []
-list2 = []
+l1 = LinkedList()
+l2 = LinkedList()
 
-for i in range(0,3):
-    elements1 = int(input())
-    list1.append(elements1)
+n1 = int(input('How many elements would you like to add? '))
+for i in range(n1):
+    data1 = int(input('Enter data item: '))
+    l1.append(data1)
 
-for j in range(0,3):
-    elements2 = int(input())
-    list2.append(elements2)
 
-print(list1)
-print(list2)
+
+n2 = int(input('How many elements would you like to add? '))
+for i in range(n2):
+    data2 = int(input('Enter data item: '))
+    l2.append(data2)
+
+
+l1.display()
+l2.display()
+
+
 
 

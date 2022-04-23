@@ -19,9 +19,14 @@ class LinkedList:
 
     def display(self):
         current = self.head
-        nodes = []
         while current is not None:
-            nodes.append(current.data)
+            print(current.data, end=' ')
             current = current.next
 
-        print(nodes)
+a_llist = LinkedList()
+n = int(input('How many elements would you like to add? '))
+for i in range(n):
+    data = int(input('Enter data item: '))
+    a_llist.append(data)
+print('The linked list: ', end='')
+a_llist.display()
