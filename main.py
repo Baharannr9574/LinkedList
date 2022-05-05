@@ -5,7 +5,8 @@ class Node:
 
 
 class LinkedList(Node):
-    def __init__(self):
+    def __init__(self,data):
+        Node.__init__(self, data)
         self.head = None
         self.last_node = None
 
@@ -37,13 +38,6 @@ def addTwoNumbers(l1:LinkedList, l2:LinkedList):
     dummy = cur = Node(0)
     carry = 0
     while l1 or l2 or carry:
-        if l1:
-            carry += l1.data
-            l1 = l1.next
-        if l2:
-            carry += l2.data
-            l2 = l2.next
-        cur.next = Node(carry%10)
-        cur = cur.next
-        carry //= 10
-    return dummy.next
+         print(l1.data)
+         print(l2.data)
+         print(carry)
