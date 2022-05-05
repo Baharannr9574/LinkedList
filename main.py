@@ -4,7 +4,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class LinkedList(Node):
     def __init__(self):
         self.head = None
         self.last_node = None
@@ -23,5 +23,27 @@ class LinkedList:
         while current is not None:
             nodes.append(current.data)
             current = current.next
-
         print(nodes)
+
+    def traverse(self):
+        node = self.head
+        while node is not None:
+            yield node.data
+            node = node.next
+
+
+
+def addTwoNumbers(l1:LinkedList, l2:LinkedList):
+    dummy = cur = Node(0)
+    carry = 0
+    while l1 or l2 or carry:
+        if l1:
+            carry += l1.data
+            l1 = l1.next
+        if l2:
+            carry += l2.data
+            l2 = l2.next
+        cur.next = Node(carry%10)
+        cur = cur.next
+        carry //= 10
+    return dummy.next
