@@ -15,6 +15,24 @@ class LinkedList:
             printval = printval.nextValue
 
 
+def merge(List_1, List_2):
+    head_ptr = temp_ptr = Node()  
+
+    while List_1 or List_2:
+
+        if List_1 and List_2:
+            temp_ptr.nextValue = Node(List_1.dataval)
+            List_1 = List_1.nextValue
+            print(List_1.dataval + List_2.dataval)
+
+        else:
+            temp_ptr.nextValue = Node(List_2.dataval)
+            List_2 = List_2.nextValue
+            print(List_1.dataval + List_2.dataval)
+
+        temp_ptr = temp_ptr.nextValue
+
+
 listOne = LinkedList()
 listOne.headValue = Node("first")
 e2 = Node("Two")
@@ -27,12 +45,14 @@ e2.nextValue = e3
 listOne.listprint()
 
 listTwo = LinkedList()
-listOne.headValue = Node("four")
+listTwo.headValue = Node("four")
 e4 = Node("Five")
 e5 = Node("Six")
 
-listOne.headValue.nextValue = e4
+listTwo.headValue.nextValue = e4
 
 e4.nextValue = e5
 
 listTwo.listprint()
+
+merge(listOne.headValue, listTwo.headValue)
