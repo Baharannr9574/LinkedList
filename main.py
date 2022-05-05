@@ -16,19 +16,16 @@ class LinkedList:
 
 
 def merge(List_1, List_2):
-    head_ptr = temp_ptr = Node()  
+    head_ptr = temp_ptr = Node()
 
     while List_1 or List_2:
 
         if List_1 and List_2:
             temp_ptr.nextValue = Node(List_1.dataval)
-            List_1 = List_1.nextValue
-            print(List_1.dataval + List_2.dataval)
 
-        else:
-            temp_ptr.nextValue = Node(List_2.dataval)
-            List_2 = List_2.nextValue
             print(List_1.dataval + List_2.dataval)
+            List_1 = List_1.nextValue
+            List_2 = List_2.nextValue
 
         temp_ptr = temp_ptr.nextValue
 
