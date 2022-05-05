@@ -35,16 +35,16 @@ class LinkedList:
 
 
 def addTwoNumbers(l1: LinkedList, l2: LinkedList):
-    dummy = cur = Node(0)
+    # dummy = cur = Node(0)
     carry = 0
-    while l1 or l2 or carry:
+    while l1 or l2:
         if l1:
             carry += l1.data
             l1 = l1.next
         if l2:
             carry += l2.data
             l2 = l2.next
-        cur.next = Node(carry % 10)
-        cur = cur.next
-        carry //= 10
+        # cur.next = Node(carry % 10)
+        # cur = cur.next
+        # carry //= 10
     return carry
