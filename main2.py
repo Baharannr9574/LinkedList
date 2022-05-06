@@ -48,3 +48,24 @@ def addTwoNumbers(l1: LinkedList, l2: LinkedList):
         # cur = cur.next
         # carry //= 10
     return carry
+
+
+def addTwoNumbersV2(l1: LinkedList, l2: LinkedList):
+    # dummy = cur = Node(0)
+    carry = 0
+    while l1.head or l2.head:
+        if l1:
+            currentNode = l1.head
+            carry += currentNode.data
+            l1.head=currentNode.next
+
+        if l2:
+            currentNode = l2.head
+            carry += currentNode.data
+            l2.head = currentNode.next
+
+
+        # cur.next = Node(carry % 10)
+        # cur = cur.next
+        # carry //= 10
+    return carry

@@ -1,4 +1,4 @@
-from main2 import Node, LinkedList, addTwoNumbers
+from main2 import Node, LinkedList, addTwoNumbers,addTwoNumbersV2
 
 list1 = LinkedList()
 list2 = LinkedList()
@@ -16,3 +16,5 @@ list1.append(3)
 list2.append(4)
 
 print(addTwoNumbers(list1.head, list2.head))
+
+print(addTwoNumbersV2(list1, list2))
