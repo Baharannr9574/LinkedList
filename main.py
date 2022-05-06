@@ -1,48 +1,61 @@
 class Node:
-    def __init__(self, dataval=None):
-        self.dataval = dataval
-        self.nextValue = None
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
-        self.headValue = None
-
-    def listprint(self):
-        printval = self.headValue
-        while printval is not None:
-            print(printval.dataval)
-            printval = printval.nextValue
+        self.head = None
+        self.last_node = None
 
 
-def merge(List_1, List_2):
-    while List_1 or List_2:
-        if List_1 and List_2:
-            print(List_1.dataval + List_2.dataval)
-            List_1 = List_1.nextValue
-            List_2 = List_2.nextValue
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
 
 
-listOne = LinkedList()
-listOne.headValue = Node("first")
-e2 = Node("Two")
-e3 = Node("Three")
+    def display(self):
+        current = self.head
+        nodes = []
+        while current is not None:
+            nodes.append(current.data)
+            current = current.next
+        print(nodes)
 
-listOne.headValue.nextValue = e2
 
-e2.nextValue = e3
+    def traverse(self):
+        node = self.head
+        while node is not None:
+            yield node.data
+            node = node.next
 
-listOne.listprint()
 
-listTwo = LinkedList()
-listTwo.headValue = Node("four")
-e4 = Node("Five")
-e5 = Node("Six")
+    def getsize(self):
+        count = 0
+        node = self.head
+        while (node != None):
+            count += 1
+            node = node.next
+        print(count)
 
-listTwo.headValue.nextValue = e4
 
-e4.nextValue = e5
 
-listTwo.listprint()
 
-merge(listOne.headValue, listTwo.headValue)
+def addTwoNumbers(l1:LinkedList, l2:LinkedList):
+    carry = 0
+    while l1 or l2:
+        if l1:
+            carry += l1.data
+            l1 = l1.next
+        if l2:
+            carry += l2.data
+            l2 = l2.next
+
+    return carry
+
+

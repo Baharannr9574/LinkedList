@@ -1,14 +1,23 @@
-from main import Node, LinkedList
+from main import Node,LinkedList,addTwoNumbers
+
 
 list1 = LinkedList()
 list2 = LinkedList()
-list1.head = Node("Mon")
-e2 = Node("Tue")
-e3 = Node("Wed")
+
+list1.append(4)
+list1.append(5)
+list1.append(2)
+
+list2.append(9)
+list2.append(6)
+list2.append(3)
 
 
-list1.head.next = e2
 
-e2.next = e3
+#nodegenrator1 = l1.traverse()
+#for i in nodegenrator1:
+   # print(i)
 
-list1.listprint()
+print(list1.display())
+print(list2.display())
+print(addTwoNumbers(list1.head, list2.head))
