@@ -1,23 +1,16 @@
 from main import Node,LinkedList,addTwoNumbers
 
 
-#list1 = LinkedList()
-#list2 = LinkedList()
+list1 = LinkedList()
+list2 = LinkedList()
 
+list1.append(4)
+list1.append(5)
+list1.append(2)
 
-n1 = int(input('How many elements would you like to add? '))
-for i in range(n1):
-    data1 = int(input('Enter data item: '))
-    list1 = LinkedList(data1)
-    #list1.append(data1)
-
-
-
-n2 = int(input('How many elements would you like to add? '))
-for i in range(n2):
-    data2 = int(input('Enter data item: '))
-    list2 = LinkedList(data2)
-    #list2.append(data2)
+list2.append(9)
+list2.append(6)
+list2.append(3)
 
 
 
@@ -25,4 +18,6 @@ for i in range(n2):
 #for i in nodegenrator1:
    # print(i)
 
-addTwoNumbers(list1,list2)
+print(list1.display())
+print(list2.display())
+print(addTwoNumbers(list1.head, list2.head))
